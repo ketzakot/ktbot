@@ -59,7 +59,6 @@ const CryptoJS = require("crypto-js");
 const crypto = require('crypto');
 const {convertSticker} = require("./libreria/swm.js")
 const { webp2mp4Url, webp2gifFile, reverseVideoFile } = require('./libreria/ezgif')
-const { validmove, setGame } = require("./libreria/tictactoe");
 const { recognize } = require('./libreria/ocr')
 
 //--New
