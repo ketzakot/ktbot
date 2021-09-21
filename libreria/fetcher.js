@@ -90,10 +90,10 @@ exports.createExif = (pack, auth) =>{
     const __ = Buffer.from(len, "hex")
     const ___ = Buffer.from(code)
     const ____ = Buffer.from(JSON.stringify(exif))
-    fs.writeFileSync('./stik/data.exif', Buffer.concat([_, __, ___, ____]), function (err) {
+    fs.writeFileSync('./sticker/data.exif', Buffer.concat([_, __, ___, ____]), function (err) {
         console.log(err)
         if (err) return console.error(err)
-        return `./stik/data.exif`
+        return `./sticker/data.exif`
     })
 
 }
@@ -101,7 +101,7 @@ exports.modStick = (media, client, mek, from) => {
     out = getRandom('.webp')
     try {
         console.log(media)
-        spawn('webpmux', ['-set','exif', './stik/data.exif', media, '-o', out])
+        spawn('webpmux', ['-set','exif', './sticker/data.exif', media, '-o', out])
         .on('exit', () => {
             client.sendMessage(from, fs.readFileSync(out), 'stickerMessage', {quoted: mek})
             fs.unlinkSync(out)
@@ -109,7 +109,7 @@ exports.modStick = (media, client, mek, from) => {
         })
     } catch (e) {
         console.log(e)
-        client.sendMessage(from, 'Terjadi keslahan', 'conversation', { quoted: mek })
+        client.sendMessage(from, 'Se produjo un error', 'conversation', { quoted: mek })
         fs.unlinkSync(media)
     }
 }
