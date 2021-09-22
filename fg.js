@@ -4877,6 +4877,7 @@ _📤 Enviando, espere si el audio no aparece, descargue por el link_`
   if(!isPremium)return reply(premi())
   if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(fdiama(prefix))
            if (args.length < 1) return reply(`✳️ *Ingresa el título de un video*\n\n📌Ejemplo *${prefix + command}* Lil Peep broken smile`)
+           reply(wait())
         var srch = args.join("");
         vidfg = await yts(srch);
         aramat = vidfg.all;
@@ -4898,7 +4899,7 @@ _📤 Enviando, espere si el audio no aparece, descargue por el link_`
 ‣ *🔗 Link* : ${a.data}
 
 _📤 Enviando, espere si el video no aparece, descargue por el link_`
-                reply(mess.wait)
+                
                 sendMediaURL(from, thumb, capt);
                 await sendMediaURL(from, dl_link).catch(() => reply("error"));
               });
