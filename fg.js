@@ -2259,41 +2259,53 @@ _📤 Enviando, espere si el audio no aparece, descargue por el link_`
                    break
                    
                    case 'video':
-				case 'playvideo':
-				case 'playvid':
+				case 'plavideo':
+				case 'plavid':
 				case 'playmp4':
-				if (!isVerify) return reply(userB(prefix))
+				 if (!isVerify) return reply(userB(prefix))
   if (isBanned) return reply(banf())
-if (args.length < 1) return reply(`✳️ *Ingresa el título de un video*\n\n📌Ejemplo *${prefix + command}* Lil Peep broken smile`)
-reply(wait()) 
-        var srch = args.join("");
-        aramas = await yts(srch);
-        aramat = aramas.all;
-        var mulaikah = aramat[0].url;
-        try {
-          ytv(mulaikah).then((res) => {
-            const { dl_link, thumb, title, filesizeF, filesize } = res;
-            axios
-              .get(`https://tinyurl.com/api-create.php?url=${dl_link}`)
-              .then(async (a) => {
-                if(Number(filesizeF.split(' MB')[0]) >= 90.00) return reply('❎ El archivo es demasiado grande, la reproducción de video se canceló')
-                capt = `
-≡ *🎥 PLAY VIDEO*
+           if (args.length < 1) return reply(`✳️ *Ingresa el título de un video*\n\n📌Ejemplo *${prefix + command}* Lil Peep broken smile`)
+            var srch = args.join('')
+            vidfg = await yts(srch);
+            aramat = vidfg.all 
+            var mulaikah = aramat[0].url                            
+                  try {
+                  	reply(wait()) 
+                    ytv(mulaikah)
+                    .then((res) => {
+                    
+                        const { dl_link, thumb, title, filesizeF, filesize } = res
+                        axios.get(`https://tinyurl.com/api-create.php?url=${dl_link}`)
+                        .then(async (a) => {
+                        if (Number(filesize) >= 100000) return sendMediaURL(from, thumb, `
+*🎥 Video econtrado*
 
 ‣ *📌Título* : ${title}
 ‣ *📟 Ext* : mp4
 ‣ *⚖️ Tamaño* : ${filesizeF}
+‣ *🎈 Subido* : ${vidfg.videos[0].ago}
+‣ *⏱️ Duración* : ${vidfg.videos[0].timestamp}
+‣ *🔗 Link* : ${a.data}
+
+_📤 Enviando, espere si el video no aparece, descargue por el link_`)
+                        const captions = `
+*🎥 Video econtrado*
+
+‣ *📌Título* : ${title}
+‣ *📟 Ext* : mp4
+‣ *⚖️ Tamaño* : ${filesizeF}
+‣ *🎈 Subido* : ${vidfg.videos[0].ago}
+‣ *⏱️ Duración* : ${vidfg.videos[0].timestamp}
+‣ *🔗 Link* : ${a.data}
 
 _📤 Enviando, espere si el video no aparece, descargue por el link_`
-                
-                sendMediaURL(from, thumb, capt);
-                await sendMediaURL(from, dl_link).catch(() => reply("error"));
-              });
-          });
-        } catch (err) {
-          reply(mess.error.api);
-        }
-        break;
+                        sendMediaURL(from, thumb, captions)
+                        await sendMediaURL(from, dl_link).catch(() => reply('❎ Ocurrió un error'))
+                        })                
+                        })
+                        } catch (err) {
+                        reply(mess.error.api)} 
+                   break
 
         
       //𝗦𝗧𝗜𝗖𝗞𝗘𝗥 𝗠𝗔𝗞𝗘𝗥 
