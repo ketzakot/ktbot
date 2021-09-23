@@ -2006,7 +2006,6 @@ if (!isVerify) return reply(userB(prefix))
         dua = typeof anu[1] !== "undefined" ? anu[1] : `@fg98._`;
         require("./libreria/fetcher.js").createExif(satu, dua);
         require("./libreria/fetcher.js").modStick(media, Fg, mek, from);
-        limitAdd(sender, limit)
         break;
         
 
