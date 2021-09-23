@@ -417,42 +417,35 @@ const isAw = isGroup ? awgp.includes(from) : false
 			}
     
 //--------𝗬𝗧 𝗗𝗘𝗦𝗖𝗔𝗥𝗚𝗔𝗦--------
-    const sendMediaURL = async (to, url, text = "", mids = []) => {
-      if (mids.length > 0) {
-        text = normalizeMention(to, text, mids);
-      }
-      const fn = Date.now() / 10000;
-      const filename = fn.toString();
-      let mime = "";
-      var download = function (uri, filename, callback) {
-        request.head(uri, function (err, res, body) {
-          mime = res.headers["content-type"];
-          request(uri)
-            .pipe(fs.createWriteStream(filename))
-            .on("close", callback);
-        });
-      };
-      download(url, filename, async function () {
-        console.log('✅ Enviando');
-        let media = fs.readFileSync(filename);
-        let type = mime.split("/")[0] + "Message";
-        if (mime === "image/gif") {
-          type = MessageType.video;
-          mime = Mimetype.gif;
-        }
-        if (mime.split("/")[0] === "audio") {
-          mime = Mimetype.mp4Audio;
-        }
-        Fg.sendMessage(to, media, type, {
-          quoted: mek,
-          mimetype: mime,
-          caption: text,
-          contextInfo: { mentionedJid: mids },
-        });
-
-        fs.unlinkSync(filename);
-      });
-    };
+    const sendMediaURL = async(to, url, text="", mids=[]) =>{
+                if(mids.length > 0){
+                    text = normalizeMention(to, text, mids)
+                }
+                const fn = Date.now() / 10000;
+                const filename = fn.toString()
+                let mime = ""
+                var download = function (uri, filename, callback) {
+                    request.head(uri, function (err, res, body) {
+                        mime = res.headers['content-type']
+                        request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
+                    });
+                };
+                download(url, filename, async function () {
+                    console.log('✅ Enviando');
+                    let media = fs.readFileSync(filename)
+                    let type = mime.split("/")[0]+"Message"
+                    if(mime === "image/gif"){
+                        type = MessageType.video
+                        mime = Mimetype.gif
+                    }
+                    if(mime.split("/")[0] === "audio"){
+                        mime = Mimetype.mp4Audio
+                    }
+                    Fg.sendMessage(to, media, type, { quoted: mek, mimetype: mime, caption: text,contextInfo: {"mentionedJid": mids}})
+                    
+                    fs.unlinkSync(filename)
+                });
+            }
   
   //-------  Stickers
 const sendStickerUrl = async(to, url) => {
@@ -2210,7 +2203,6 @@ console.log(e)
 break
 //----
       
-      
  case 'play':
 			if (!isVerify) return reply(userB(prefix))
   if (isBanned) return reply(banf())
@@ -2259,8 +2251,8 @@ _📤 Enviando, espere si el audio no aparece, descargue por el link_`
                    break
                    
                    case 'video':
-				case 'plavideo':
-				case 'plavid':
+				case 'playvideo':
+				case 'playvid':
 				case 'playmp4':
 				 if (!isVerify) return reply(userB(prefix))
   if (isBanned) return reply(banf())
