@@ -594,12 +594,6 @@ break
 buf = fs.readFileSync(`./src/mp3/putobot.mp3`)
 Fg.sendMessage(from, buf, audio, {mimetype: 'audio/mp4', quoted: mek, ptt: true})
 break
-	switch(autofg) {
-        	
-        case 'hola bot':
-buf = fs.readFileSync(`./src/mp3/holabot.mp3`)
-Fg.sendMessage(from, buf, audio, {mimetype: 'audio/mp4', quoted: mek, ptt: true})
-break
         	
  case 'prefix':
  case 'prefijo': 
