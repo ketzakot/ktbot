@@ -2419,8 +2419,9 @@ case 'sgif':
         } else {
           reply(`✳️ Envia una imagen con *${prefix + command}* o etiqueta una imagen que se haya enviado\n*Videos 1-9 segundos*`)
         }
-        break
-        
+        break       
+                          
+		    
       case 'toimage': 
 case 'toimg':
 case 'aimg':
