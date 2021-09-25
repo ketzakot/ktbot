@@ -612,7 +612,7 @@ break
       if (!isVerify) return reply(userB(prefix))
   if (isBanned) return reply(banf())
 	uptime = process.uptime()
-  capt = `Total Hits : ${totalhit} \n‣ Clasificacion : ★★★★☆\n‣ Usuarios : ${_user.length}`
+  capt = `Total Hits : ${totalhit} \n‣ Clasificacion : ★★★★☆\n‣ Usuarios : ${_user.length} \n༆𝙺𝚃𝚉`
   thum = await fs.readFileSync('./image/fg.jpg').toString('base64')
       replyimg(help(prefix, pushname), text, capt, thum)
 break;
