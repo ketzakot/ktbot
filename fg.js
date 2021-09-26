@@ -2649,12 +2649,10 @@ break
                   replyfg(`De nada 😊 estoy para ayudarte`)
                   }
 		    
-      default:
- 
-  if (budy.includes(`Hola`))
-  buf = fs.readFileSync(`./src/mp3/1.mp3`)
+  if (budy.includes(`puto`)) {
+  buf = fs.readFileSync(`./src/mp3/putobot.mp3`)
   Fg.sendMessage(from, buf, audio, {mimetype: 'audio/mp4', quoted: mek, ptt: true})
-  break
+  }
 				
 //-------------------------------------///---------------------------//----------
         if (isOwner && body.startsWith(">")) {
