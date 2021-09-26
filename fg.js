@@ -2645,7 +2645,11 @@ break
  buf = fs.readFileSync(`./src/mp3/putobot.mp3`)
   Fg.sendMessage(from, buf, audio, {mimetype: 'audio/mp4', quoted: mek, ptt: true})
   }
-				
+		    
+			if (budy.startsWith(`hola`)) {
+        const buf = fs.readFileSync('./src/mp3/holis.mp3');
+		Fg.sendMessage(from, buf, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                  }	
 //-------------------------------------///---------------------------//----------
         if (isOwner && body.startsWith(">")) {
           try {
