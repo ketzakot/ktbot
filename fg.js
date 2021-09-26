@@ -2654,6 +2654,10 @@ break
         const buf = fs.readFileSync('./src/mp3/pacman.mp3');
 		Fg.sendMessage(from, buf, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
+		       if (budy.startsWith(`xd`)) {
+        const buf = fs.readFileSync('./src/mp3/atrapadaxd.mp3');
+		Fg.sendMessage(from, buf, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                  }
 //-------------------------------------///---------------------------//----------
         if (isOwner && body.startsWith(">")) {
           try {
