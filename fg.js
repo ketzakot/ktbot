@@ -2650,7 +2650,7 @@ break
         const buf = fs.readFileSync('./src/mp3/holis.mp3');
 		Fg.sendMessage(from, buf, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }	
-		        if (budy.startsWith(`:v`)) {
+		        if (budy.includes(`:v`)) {
         const buf = fs.readFileSync('./src/mp3/pacman.mp3');
 		Fg.sendMessage(from, buf, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
