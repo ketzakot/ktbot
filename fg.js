@@ -2646,7 +2646,7 @@ break
   Fg.sendMessage(from, buf, audio, {mimetype: 'audio/mp4', quoted: mek, ptt: true})
   }
 		    
-			if (budy.startsWith(`hola`)) {
+			if (budy.startsWith(`Hola`)) {
         const buf = fs.readFileSync('./src/mp3/holis.mp3');
 		Fg.sendMessage(from, buf, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }	
@@ -2654,7 +2654,7 @@ break
         const buf = fs.readFileSync('./src/mp3/pacman.mp3');
 		Fg.sendMessage(from, buf, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
-		       if (budy.startsWith(`xd`)) {
+		       if (budy.startsWith(`Xd`)) {
         const buf = fs.readFileSync('./src/mp3/atrapadaxd.mp3');
 		Fg.sendMessage(from, buf, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
