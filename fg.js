@@ -2646,15 +2646,15 @@ break
   Fg.sendMessage(from, buf, audio, {mimetype: 'audio/mp4', quoted: mek, ptt: true})
   }
 		    
-			if (budy.startsWith(`Hola`)) {
+			if (budy.includes(`Hola`)) {
         const buf = fs.readFileSync('./src/mp3/holis.mp3');
 		Fg.sendMessage(from, buf, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }	
-		        if (budy.includes(`:v`)) {
-        const buf = fs.readFileSync('./src/mp3/pacman.mp3');
+		        if (budy.includes(`bot gay`)) {
+        const buf = fs.readFileSync('./src/mp3/gay.mp3');
 		Fg.sendMessage(from, buf, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
-		       if (budy.startsWith(`Xd`)) {
+		       if (budy.includes(`Xd`)) {
         const buf = fs.readFileSync('./src/mp3/atrapadaxd.mp3');
 		Fg.sendMessage(from, buf, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
